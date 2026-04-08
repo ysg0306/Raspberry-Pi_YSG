@@ -18,7 +18,7 @@ try:
                 now = datetime.datetime.now()                       # 현재 날짜, 시간을 가져옴 
                 print(now)                                          # 감지시간을 터미널에 출력
                 fileName = now.strftime('%Y-%m-%d %H:%M:%S')        # 파일이름에 활용할 촬영시간(년,달,일 시,분,초)을 flieName 변수에 저장
-                picam2.capture_file(fileName + '.jpg')              # flieName + ".JPG"파일명으로 JPG 확장자 파일 생성
+                picam2.capture_file(fileName + '.jpg')              # 사진을 촬영하고 flieName(날짜,시간) 파일명으로 JPG 확장자 파일로 저장
                 time.sleep(0.5)                                     # 연속 촬영 방지를 위해서 0.5초간 대기
         except:                                                     # 루프 중 오류 발생 시 무시하고 진행
             pass
