@@ -3,11 +3,11 @@ import urllib.request, json, tkinter, tkinter.font
 # JSON 데이터 처리하는 json 라이브러리
 # GUI 창 만드는 tkinter 라이브러리
 # tkinter 폰트 설정하는 tkinter.font 라이브러리를 받아옴
-API_KEY = "2d7be3bbb03a9cc994b4abfcd24fa441"        #openweathermap사이트에서 로그인하고 얻은 api키를 입력
+API_KEY = "비공개(API키 적는칸)"        #openweathermap사이트에서 로그인하고 얻은 api키를 입력
  
 def tick1Min(): #1분마다 반복하는 함수  (날씨데이터를 받아와 온도, 습도 추출함)
     url = f"https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid={API_KEY}&units=metric" # 서울 날씨 요청하기 위한 URL+개인 API키
-    with urllib.request.urlopen(url) as r:      # API에 요청
+    with urllib.request.urlopen(url) as r:      # API키를 포함한 URL을 통해 웹 사이트에서 정보를 요청
         data = json.loads(r.read())             # 받은 응답을 JSON 형태로 변환
     temp = data["main"]["temp"]                 # 데이터에서 온도 받아옴
     humi = data["main"]["humidity"]             # 데이터에서 습도 받아옴
