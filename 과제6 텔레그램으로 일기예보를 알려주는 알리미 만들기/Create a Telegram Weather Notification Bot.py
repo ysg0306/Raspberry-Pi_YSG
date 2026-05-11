@@ -37,9 +37,9 @@ async def main():                                                       # 비동
             hm = now.strftime('%H:%M')                                  # 현재 시,분 추출  # Current time as HH:MM (e.g. "08:30")
 
             is_alert_hour = now.hour in ALERT_HOURS and now.minute == 0 and now.second == 0   # Check scheduled hour alert
-            is_alert_time = hm in ALERT_TIMES and now.second == 0       # 정각인지 확인하고  지정 시간 알림 조건 확인                     # Check custom time alert
+            is_alert_time = hm in ALERT_TIMES and now.second == 0       # 정각인지 확인,  지정 시간 알림 조건 확인                     # Check custom time alert
 
-            if is_alert_hour or is_alert_time:                          #    
+            if is_alert_hour or is_alert_time:                          # 조건에 맞으면 실행
                 msg = getWeather()                                      # msg에 날씨정보 저장
                 print(msg)                                              # 터미널에 메세지 출력
                 await bot.send_message(chat_id=telegram_id, text=msg)   # 텔레그램으로 메세지 전송
